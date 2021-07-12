@@ -14,9 +14,8 @@ Using an `if/else` expression, write code that prompts the user for their age, t
 - If the user is older than 21, he/she should receive a message that he/she can both enter and drink.
 
 ```js
-let age = prompt(
-  "'Ello mate, what's your age? Got to be 18 to come in 'ere!",
-  0
+let age = parseInt(
+  prompt("'Ello mate, what's your age? Got to be 18 to come in 'ere!", 0)
 );
 
 if (age >= 21) {
