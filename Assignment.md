@@ -14,7 +14,18 @@ Using an `if/else` expression, write code that prompts the user for their age, t
 - If the user is older than 21, he/she should receive a message that he/she can both enter and drink.
 
 ```js
-// Your Answer
+let age = parseInt(
+  prompt("'Ello mate, what's your age? Got to be 18 to come in 'ere!", 0)
+);
+
+if (age >= 21) {
+  console.log("You can enter and have a drink, enjoy!");
+} else if (age >= 18 && age < 21) {
+  console.log("You can enter, but no drink for you!");
+  console.log("go on, enter.");
+} else {
+  console.log("Too young, YOU SHALL NOT PASS!!");
+}
 ```
 
 ### 2: Fizzbuzz
@@ -32,7 +43,32 @@ For version 1 of this problem, only use `if/elseif/else` expressions to solve it
 - Otherwise, print the number
 
 ```js
-// Your Answer
+/* 
+Amendment and notes from Alok feedback on 19/07/2021
+Removal of For loop on numbers 0 to 100
+Implement a prompt for user to pick a number
+Added min and max variables for range of 0 to 100 respectively
+Removed multiples of 15 (3 * 5) in if statement and added && to check if num is multiples of 3 and 5 instead
+*/
+
+const fizz = 3;
+const buzz = 5;
+
+let min = 0;
+let max = 100;
+let num = parseFloat(prompt("Pick a random number between 0 and 100", 0));
+
+if (num < min || num > max) {
+  console.log("You need to pick a random number between 0 and 100!");
+} else if (num % fizz === 0 && num % buzz === 0) {
+  console.log("FizzBuzz");
+} else if (num % buzz === 0) {
+  console.log("Buzz");
+} else if (num % fizz === 0) {
+  console.log("Fizz");
+} else {
+  console.log(num);
+}
 ```
 
 ### 3: The Grade Assigner
@@ -48,7 +84,17 @@ For version 1 of this problem, only use `if/elseif/else` expressions to solve it
 - D: `60-69`
 
 ```js
-// Your Answer
+for (let i = 60; i <= 100; i++) {
+  if (i >= 60 && i <= 69) {
+    console.log("For,", i, " you got a D.");
+  } else if (i >= 70 && i <= 79) {
+    console.log("For,", i, " you got a C.");
+  } else if (i >= 80 && i <= 89) {
+    console.log("For,", i, " you got a B.");
+  } else if (i >= 90 && i <= 100) {
+    console.log("For,", i, " you got an A.");
+  }
+}
 ```
 
 ### 4: Favorite TV Shows
@@ -62,7 +108,23 @@ For version 1 of this problem, only use `if/elseif/else` expressions to solve it
    ```
 
 ```js
-// Your Answer
+let tvShows = [
+  "Kobra Kai",
+  "Better Call Saul",
+  "Stranger Things",
+  "The Boys",
+  "Below Deck"
+];
+
+let showPreference = 0;
+
+for (let i = 0; i <= tvShows.length - 1; i++) {
+  console.log("My #", showPreference + 1, "choice is", tvShows[i]);
+  showPreference++;
+  if (showPreference === tvShows.length) {
+    showPreference = 0;
+  }
+}
 ```
 
 ### 5: Age Filter
@@ -71,7 +133,13 @@ For version 1 of this problem, only use `if/elseif/else` expressions to solve it
 1. Loop through and log only the ages that are over 21
 
 ```js
-// Your Answer
+let age = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+
+for (let i = 0; i <= age.length; i++) {
+  if (age[i] > 21) {
+    console.log(age[i]);
+  }
+}
 ```
 
 ## Optional Bonus Problems
@@ -85,9 +153,13 @@ Change all **odd numbers** in the Array to their value multiplied by 2:
 ```js
 const numbers = [4, 9, 7, 2, 1, 8];
 
-// Your Answer
-
-console.log(numbers); // => [4, 18, 14, 2, 2, 8]
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 !== 0) {
+    console.log(numbers[i] * 2);
+  } else {
+    console.log(numbers[i]);
+  }
+}
 ```
 
 ## Submission Guidelines
