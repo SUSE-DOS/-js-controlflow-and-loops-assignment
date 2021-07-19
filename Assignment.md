@@ -43,16 +43,31 @@ For version 1 of this problem, only use `if/elseif/else` expressions to solve it
 - Otherwise, print the number
 
 ```js
-for (let i = 1; i <= 100; i++) {
-  if (i % 15 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else if (i % 3 === 0) {
-    console.log("Fizz");
-  } else {
-    console.log(i);
-  }
+/* 
+Amendment and notes from Alok feedback on 19/07/2021
+Removal of For loop on numbers 0 to 100
+Implement a prompt for user to pick a number
+Added min and max variables for range of 0 to 100 respectively
+Removed multiples of 15 (3 * 5) in if statement and added && to check if num is multiples of 3 and 5 instead
+*/
+
+const fizz = 3;
+const buzz = 5;
+
+let min = 0;
+let max = 100;
+let num = parseFloat(prompt("Pick a random number between 0 and 100", 0));
+
+if (num < min || num > max) {
+  console.log("You need to pick a random number between 0 and 100!");
+} else if (num % fizz === 0 && num % buzz === 0) {
+  console.log("FizzBuzz");
+} else if (num % buzz === 0) {
+  console.log("Buzz");
+} else if (num % fizz === 0) {
+  console.log("Fizz");
+} else {
+  console.log(num);
 }
 ```
 
